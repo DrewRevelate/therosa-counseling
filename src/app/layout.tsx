@@ -16,6 +16,10 @@ const libreBaskerville = Libre_Baskerville({
 export const metadata: Metadata = {
   title: "Therosa Counseling",
   description: "Professional counseling services specializing in mental health support",
+  icons: {
+    icon: '/logo.png',
+    apple: '/logo.png',
+  },
 };
 
 export default function RootLayout({

@@ -1,4 +1,5 @@
 import { MainLayout } from '@/components/layout';
+import Image from 'next/image';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -26,8 +27,14 @@ export default function AboutPage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="md:flex md:gap-12 items-start">
             <div className="md:w-1/3 mb-8 md:mb-0">
-              <div className="w-64 h-64 mx-auto bg-gradient-to-br from-brand-purple to-brand-pink rounded-lg flex items-center justify-center text-white text-8xl font-serif shadow-lg">
-                T
+              <div className="w-64 h-64 mx-auto flex items-center justify-center">
+                <Image
+                  src="/logo.png"
+                  alt="Therosa Counseling Logo"
+                  width={256}
+                  height={256}
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div className="mt-6 text-center">
                 <h2 className="text-2xl font-serif font-bold text-gray-900 mb-2">
