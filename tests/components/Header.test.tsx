@@ -4,10 +4,11 @@ import { axe } from 'vitest-axe';
 import Header from '@/components/layout/Header';
 
 describe('Header Component', () => {
-  it('renders the site title', () => {
+  it('renders the site logo', () => {
     render(<Header />);
-    const title = screen.getByText(/Therosa Counseling/i);
-    expect(title).toBeInTheDocument();
+    const logo = screen.getByAltText(/Therosa Counseling/i);
+    expect(logo).toBeInTheDocument();
+    expect(logo).toHaveAttribute('src', expect.stringContaining('logo-full.png'));
   });
 
   it('renders navigation links', () => {
