@@ -143,29 +143,29 @@ export default function AboutPage() {
             </h3>
 
             <div className="grid md:grid-cols-2 gap-6 not-prose">
-              <div className="border-l-4 border-brand-purple pl-4">
-                <h4 className="font-bold text-gray-900 mb-2">Compassion & Non-Judgment</h4>
+              <div className="bg-brand-purple/5 p-4 rounded-lg">
+                <h4 className="font-bold text-brand-purple mb-2">Compassion & Non-Judgment</h4>
                 <p className="text-gray-600">
                   Creating a safe space where you can explore difficult experiences without shame or judgment.
                 </p>
               </div>
 
-              <div className="border-l-4 border-brand-pink pl-4">
-                <h4 className="font-bold text-gray-900 mb-2">Evidence-Based Practice</h4>
+              <div className="bg-brand-pink/5 p-4 rounded-lg">
+                <h4 className="font-bold text-brand-pink mb-2">Evidence-Based Practice</h4>
                 <p className="text-gray-600">
                   Utilizing proven therapeutic approaches backed by research and clinical effectiveness.
                 </p>
               </div>
 
-              <div className="border-l-4 border-brand-purple pl-4">
-                <h4 className="font-bold text-gray-900 mb-2">Client-Centered Care</h4>
+              <div className="bg-brand-purple/5 p-4 rounded-lg">
+                <h4 className="font-bold text-brand-purple mb-2">Client-Centered Care</h4>
                 <p className="text-gray-600">
                   Tailoring treatment to your unique needs, goals, and pace of healing.
                 </p>
               </div>
 
-              <div className="border-l-4 border-brand-pink pl-4">
-                <h4 className="font-bold text-gray-900 mb-2">Cultural Sensitivity</h4>
+              <div className="bg-brand-pink/5 p-4 rounded-lg">
+                <h4 className="font-bold text-brand-pink mb-2">Cultural Sensitivity</h4>
                 <p className="text-gray-600">
                   Honoring your background, identity, and lived experiences as integral to your healing journey.
                 </p>

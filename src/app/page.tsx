@@ -53,16 +53,16 @@ export default function Home() {
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="bg-gray-50 p-8 rounded-lg border-l-4 border-brand-purple">
-              <h3 className="text-2xl font-serif font-bold text-gray-900 mb-4">
+            <div className="bg-gray-50 p-8 rounded-lg">
+              <h3 className="text-2xl font-serif font-bold text-brand-purple mb-4">
                 Trauma Counseling
               </h3>
               <p className="text-gray-600">
                 Evidence-based trauma-informed therapy to help you process difficult experiences, develop coping strategies, and reclaim your sense of safety and wellbeing.
               </p>
             </div>
-            <div className="bg-gray-50 p-8 rounded-lg border-l-4 border-brand-pink">
-              <h3 className="text-2xl font-serif font-bold text-gray-900 mb-4">
+            <div className="bg-gray-50 p-8 rounded-lg">
+              <h3 className="text-2xl font-serif font-bold text-brand-pink mb-4">
                 Addiction Treatment
               </h3>
               <p className="text-gray-600">

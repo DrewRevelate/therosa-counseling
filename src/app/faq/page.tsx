@@ -32,8 +32,8 @@ export default function FAQPage() {
             </h2>
 
             <div className="space-y-6">
-              <div className="border-l-4 border-brand-purple pl-6 py-2">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
+              <div className="bg-brand-purple/5 p-6 rounded-lg">
+                <h3 className="text-xl font-bold text-brand-purple mb-3">
                   How do I schedule my first appointment?
                 </h3>
                 <p className="text-gray-600">
@@ -41,7 +41,7 @@ export default function FAQPage() {
                 </p>
               </div>
 
-              <div className="border-l-4 border-brand-purple/30 pl-6 py-2">
+              <div className="bg-gray-50 p-6 rounded-lg">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   What should I expect in my first session?
                 </h3>
@@ -50,7 +50,7 @@ export default function FAQPage() {
                 </p>
               </div>
 
-              <div className="border-l-4 border-brand-purple/30 pl-6 py-2">
+              <div className="bg-gray-50 p-6 rounded-lg">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   Do you see clients in person or only online?
                 </h3>
@@ -59,7 +59,7 @@ export default function FAQPage() {
                 </p>
               </div>
 
-              <div className="border-l-4 border-brand-purple/30 pl-6 py-2">
+              <div className="bg-gray-50 p-6 rounded-lg">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   Who can receive services from Therosa Counseling?
                 </h3>
@@ -77,8 +77,8 @@ export default function FAQPage() {
             </h2>
 
             <div className="space-y-6">
-              <div className="border-l-4 border-brand-pink pl-6 py-2">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
+              <div className="bg-brand-pink/5 p-6 rounded-lg">
+                <h3 className="text-xl font-bold text-brand-pink mb-3">
                   How much do sessions cost?
                 </h3>
                 <p className="text-gray-600 mb-3">
@@ -89,7 +89,7 @@ export default function FAQPage() {
                 </p>
               </div>
 
-              <div className="border-l-4 border-brand-pink/30 pl-6 py-2">
+              <div className="bg-gray-50 p-6 rounded-lg">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   Do you accept insurance?
                 </h3>
@@ -101,7 +101,7 @@ export default function FAQPage() {
                 </p>
               </div>
 
-              <div className="border-l-4 border-brand-pink/30 pl-6 py-2">
+              <div className="bg-gray-50 p-6 rounded-lg">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   What forms of payment do you accept?
                 </h3>
@@ -110,7 +110,7 @@ export default function FAQPage() {
                 </p>
               </div>
 
-              <div className="border-l-4 border-brand-pink/30 pl-6 py-2">
+              <div className="bg-gray-50 p-6 rounded-lg">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   What is your cancellation policy?
                 </h3>
@@ -128,8 +128,8 @@ export default function FAQPage() {
             </h2>
 
             <div className="space-y-6">
-              <div className="border-l-4 border-brand-purple pl-6 py-2">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
+              <div className="bg-brand-purple/5 p-6 rounded-lg">
+                <h3 className="text-xl font-bold text-brand-purple mb-3">
                   Is online therapy as effective as in-person therapy?
                 </h3>
                 <p className="text-gray-600">
@@ -137,7 +137,7 @@ export default function FAQPage() {
                 </p>
               </div>
 
-              <div className="border-l-4 border-brand-purple/30 pl-6 py-2">
+              <div className="bg-gray-50 p-6 rounded-lg">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   What technology do I need for online sessions?
                 </h3>
@@ -164,7 +164,7 @@ export default function FAQPage() {
                 </ul>
               </div>
 
-              <div className="border-l-4 border-brand-purple/30 pl-6 py-2">
+              <div className="bg-gray-50 p-6 rounded-lg">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   Is online therapy confidential and secure?
                 </h3>
@@ -173,7 +173,7 @@ export default function FAQPage() {
                 </p>
               </div>
 
-              <div className="border-l-4 border-brand-purple/30 pl-6 py-2">
+              <div className="bg-gray-50 p-6 rounded-lg">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   What if I have technical difficulties during a session?
                 </h3>
@@ -182,7 +182,7 @@ export default function FAQPage() {
                 </p>
               </div>
 
-              <div className="border-l-4 border-brand-purple/30 pl-6 py-2">
+              <div className="bg-gray-50 p-6 rounded-lg">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   How long are therapy sessions?
                 </h3>
@@ -200,8 +200,8 @@ export default function FAQPage() {
             </h2>
 
             <div className="space-y-6">
-              <div className="border-l-4 border-brand-pink pl-6 py-2">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
+              <div className="bg-brand-pink/5 p-6 rounded-lg">
+                <h3 className="text-xl font-bold text-brand-pink mb-3">
                   How long will I need to be in therapy?
                 </h3>
                 <p className="text-gray-600">
@@ -209,7 +209,7 @@ export default function FAQPage() {
                 </p>
               </div>
 
-              <div className="border-l-4 border-brand-pink/30 pl-6 py-2">
+              <div className="bg-gray-50 p-6 rounded-lg">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   How often should I attend sessions?
                 </h3>
@@ -218,7 +218,7 @@ export default function FAQPage() {
                 </p>
               </div>
 
-              <div className="border-l-4 border-brand-pink/30 pl-6 py-2">
+              <div className="bg-gray-50 p-6 rounded-lg">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   What if I'm in crisis or have an emergency?
                 </h3>
@@ -244,7 +244,7 @@ export default function FAQPage() {
                 </ul>
               </div>
 
-              <div className="border-l-4 border-brand-pink/30 pl-6 py-2">
+              <div className="bg-gray-50 p-6 rounded-lg">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   Do you prescribe medication?
                 </h3>
@@ -253,7 +253,7 @@ export default function FAQPage() {
                 </p>
               </div>
 
-              <div className="border-l-4 border-brand-pink/30 pl-6 py-2">
+              <div className="bg-gray-50 p-6 rounded-lg">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   Can family members or partners join sessions?
                 </h3>
@@ -271,8 +271,8 @@ export default function FAQPage() {
             </h2>
 
             <div className="space-y-6">
-              <div className="border-l-4 border-brand-purple pl-6 py-2">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
+              <div className="bg-brand-purple/5 p-6 rounded-lg">
+                <h3 className="text-xl font-bold text-brand-purple mb-3">
                   Is everything I say in therapy confidential?
                 </h3>
                 <p className="text-gray-600 mb-3">
@@ -300,7 +300,7 @@ export default function FAQPage() {
                 </p>
               </div>
 
-              <div className="border-l-4 border-brand-purple/30 pl-6 py-2">
+              <div className="bg-gray-50 p-6 rounded-lg">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   How is my information stored and protected?
                 </h3>

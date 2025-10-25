@@ -276,8 +276,8 @@ export default function ServicesPage() {
           </h2>
 
           <div className="space-y-6">
-            <div className="border-l-4 border-brand-purple pl-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">
+            <div className="bg-brand-purple/5 p-6 rounded-lg">
+              <h3 className="text-xl font-bold text-brand-purple mb-2">
                 Initial Consultation
               </h3>
               <p className="text-gray-600">
@@ -285,8 +285,8 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            <div className="border-l-4 border-brand-pink pl-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">
+            <div className="bg-brand-pink/5 p-6 rounded-lg">
+              <h3 className="text-xl font-bold text-brand-pink mb-2">
                 Personalized Treatment Plan
               </h3>
               <p className="text-gray-600">
@@ -294,8 +294,8 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            <div className="border-l-4 border-brand-purple pl-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">
+            <div className="bg-brand-purple/5 p-6 rounded-lg">
+              <h3 className="text-xl font-bold text-brand-purple mb-2">
                 Ongoing Sessions
               </h3>
               <p className="text-gray-600">
@@ -303,8 +303,8 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            <div className="border-l-4 border-brand-pink pl-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">
+            <div className="bg-brand-pink/5 p-6 rounded-lg">
+              <h3 className="text-xl font-bold text-brand-pink mb-2">
                 Secure Online Platform
               </h3>
               <p className="text-gray-600">
