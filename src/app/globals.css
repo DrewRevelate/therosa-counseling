@@ -13,7 +13,7 @@
   --color-brand-purple: var(--brand-purple);
   --color-brand-pink: var(--brand-pink);
   --font-sans: var(--font-inter);
-  --font-serif: var(--font-georgia);
+  --font-serif: var(--font-serif);
 }
 
 @media (prefers-color-scheme: dark) {

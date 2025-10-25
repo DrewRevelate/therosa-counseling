@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Georgia } from "next/font/google";
+import { Inter, Libre_Baskerville } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -7,8 +7,8 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const georgia = Georgia({
-  variable: "--font-georgia",
+const libreBaskerville = Libre_Baskerville({
+  variable: "--font-serif",
   weight: ["400", "700"],
   subsets: ["latin"],
 });
@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${georgia.variable} antialiased`}
+        className={`${inter.variable} ${libreBaskerville.variable} antialiased`}
       >
         {children}
       </body>
