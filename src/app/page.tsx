@@ -27,15 +27,11 @@ export default function Home() {
               </h1>
 
               <p className="max-w-xl text-lg leading-relaxed text-gray-700 md:text-xl">
-                If you&apos;re dealing with trauma or addiction, you already know how isolating it can feel. I get it. And I&apos;m here to help.
+                I&apos;m Catherine—a licensed therapist in NH and MA with 20+ years specializing in trauma and addiction. I&apos;m here to help you move forward, at your own pace.
               </p>
 
-              <p className="max-w-xl text-lg leading-relaxed text-gray-700 md:text-xl">
-                I&apos;m a licensed therapist in New Hampshire and Massachusetts with over 20 years of experience specializing in trauma and addiction. I went back to school specifically for a master&apos;s degree in addiction counseling because I saw how deeply these issues are connected. Not because it&apos;s trendy—because it&apos;s what actually works.
-              </p>
-
-              <p className="mt-8 max-w-lg border-l-2 border-brand-purple pl-6 text-base italic leading-relaxed text-gray-600 md:text-lg">
-                Therapy isn&apos;t about me talking at you for an hour. It&apos;s about creating a space where you feel safe enough to figure things out—at your own pace.
+              <p className="mt-6 max-w-lg border-l-2 border-brand-purple pl-6 text-base italic leading-relaxed text-gray-600 md:text-lg">
+                Therapy isn&apos;t about me talking at you. It&apos;s about creating a space where you feel safe enough to figure things out.
               </p>
 
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
