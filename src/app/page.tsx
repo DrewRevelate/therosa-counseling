@@ -39,7 +39,7 @@ export default function Home() {
               </p>
 
               <p className="text-lg md:text-xl text-gray-700 mb-5 max-w-xl leading-relaxed">
-                I&apos;m a licensed therapist in New Hampshire and Massachusetts who specializes in trauma and addiction work. Not because it&apos;s trendy, but because it&apos;s what I&apos;m trained for and what I care about.
+                I&apos;m a licensed therapist in New Hampshire and Massachusetts with over 20 years of experience specializing in trauma and addiction. I went back to school specifically for a master&apos;s degree in addiction counseling because I saw how deeply these issues are connected. Not because it&apos;s trendy—because it&apos;s what actually works.
               </p>
 
               <p className="text-base md:text-lg text-gray-600 italic mt-8 pl-6 border-l-[3px] border-brand-pink max-w-lg leading-relaxed">
@@ -73,6 +73,7 @@ export default function Home() {
                 <ul className="space-y-3">
                   {[
                     'No judgment. Seriously.',
+                    '20+ years experience with trauma & addiction',
                     'Sessions are online (NH & MA residents)',
                     'We work at your pace, not mine',
                     'HIPAA-compliant and confidential',
@@ -166,7 +167,7 @@ export default function Home() {
             Some weeks you&apos;ll feel progress. Other weeks it&apos;ll feel like you&apos;re back at square one. That&apos;s normal. That&apos;s actually how this works.
           </p>
           <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-            I&apos;m not going to promise quick fixes or miracle cures. What I can promise is a safe space, no judgment, and someone who actually listens.
+            After 20+ years of doing this work—in emergency rooms, crisis clinics, and specialized trauma centers—I&apos;ve learned that very little surprises me anymore. I&apos;m not going to promise quick fixes or miracle cures. What I can promise is a safe space, no judgment, and someone who can handle whatever you&apos;re dealing with.
           </p>
           <div
             className="text-2xl text-brand-purple mt-8 inline-block"

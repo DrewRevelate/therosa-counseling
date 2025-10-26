@@ -25,8 +25,11 @@ export default function ServicesPage() {
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              At Therosa Counseling, we offer compassionate, professional online therapy services specializing in trauma and addiction treatment. All sessions are conducted via secure telehealth platforms and are available exclusively to residents of New Hampshire and Massachusetts.
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-4">
+              At Therosa Counseling, I provide compassionate, professional online therapy services specializing in trauma and addiction treatment—because these two issues are often deeply connected. With over 20 years of clinical experience, including work in emergency rooms, crisis intervention, and specialized trauma clinics, I understand the complexity of what you&apos;re dealing with.
+            </p>
+            <p className="text-base text-gray-500 max-w-2xl mx-auto">
+              All sessions are conducted via secure, HIPAA-compliant telehealth platforms and are available exclusively to residents of New Hampshire and Massachusetts.
             </p>
           </div>
         </div>
@@ -58,10 +61,10 @@ export default function ServicesPage() {
                 </p>
 
                 <h4 className="text-xl font-bold text-gray-900 mb-3">
-                  Our Approach to Trauma Treatment
+                  My Approach to Trauma Treatment
                 </h4>
                 <p className="text-gray-600 mb-4">
-                  I use evidence-based, trauma-informed approaches that recognize the profound impact trauma has on the mind, body, and spirit. Treatment is tailored to your unique needs and proceeds at a pace that feels safe and manageable for you.
+                  With over 4 years as a dedicated trauma clinician and additional crisis intervention experience in hospital emergency rooms, I&apos;ve worked with people dealing with everything from acute crisis situations to long-standing trauma. I use evidence-based, trauma-informed approaches that recognize the profound impact trauma has on the mind, body, and spirit. Treatment is tailored to your unique needs and proceeds at a pace that feels safe and manageable for you.
                 </p>
 
                 <h4 className="text-xl font-bold text-gray-900 mb-3">
@@ -159,10 +162,10 @@ export default function ServicesPage() {
                 </p>
 
                 <h4 className="text-xl font-bold text-gray-900 mb-3">
-                  Our Approach to Addiction Treatment
+                  My Approach to Addiction Treatment
                 </h4>
                 <p className="text-gray-600 mb-4">
-                  I provide evidence-based, compassionate care that treats addiction as a health condition, not a moral failing. We work collaboratively to understand your relationship with substances, identify triggers, and develop sustainable strategies for recovery.
+                  I went back to school specifically to earn a master&apos;s degree in Substance Abuse/Addiction Counseling because I kept seeing how deeply trauma and addiction are connected. I&apos;ve also worked in intensive outpatient programs (IOP) with adolescents and adults in recovery. I provide evidence-based, compassionate care that treats addiction as a health condition, not a moral failing. We work collaboratively to understand your relationship with substances, identify triggers, and develop sustainable strategies for recovery.
                 </p>
 
                 <h4 className="text-xl font-bold text-gray-900 mb-3">
