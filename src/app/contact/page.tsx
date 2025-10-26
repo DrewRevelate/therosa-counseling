@@ -147,9 +147,7 @@ export default function ContactPage() {
               details.
             </p>
             <a
-              href="https://calendar.app.google/zRvQ4e6mVcHk9KYD6"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/schedule"
               className="mt-6 inline-block rounded-lg bg-brand-purple px-10 py-4 text-base font-semibold text-white shadow-md transition-transform hover:-translate-y-0.5 hover:bg-[#8B3589] hover:shadow-lg"
             >
               View available times

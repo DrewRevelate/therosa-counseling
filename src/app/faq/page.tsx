@@ -317,9 +317,7 @@ export default function FAQPage() {
               Contact Me
             </a>
             <a
-              href="https://calendar.app.google/zRvQ4e6mVcHk9KYD6"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/schedule"
               className="inline-block rounded-lg border border-white/70 px-11 py-5 text-lg font-semibold text-white transition-colors hover:bg-white/10"
             >
               Schedule a Consultation

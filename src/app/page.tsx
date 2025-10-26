@@ -40,9 +40,7 @@ export default function Home() {
 
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
                 <a
-                  href="https://calendar.app.google/zRvQ4e6mVcHk9KYD6"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/schedule"
                   className="inline-block rounded-lg bg-brand-purple px-9 py-4 text-lg font-medium text-white shadow-md transition-colors hover:bg-[#8B3589]"
                 >
                   Schedule a Consultation
@@ -170,9 +168,7 @@ export default function Home() {
             Booking a consultation doesn&apos;t mean you&apos;re committing to anything. It just means you&apos;re willing to see if this might help. That takes courage.
           </p>
           <a
-            href="https://calendar.app.google/zRvQ4e6mVcHk9KYD6"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/schedule"
             className="mt-8 inline-block rounded-lg bg-white px-11 py-5 text-lg font-semibold text-brand-purple shadow-lg transition-transform hover:-translate-y-0.5 hover:shadow-2xl"
           >
             Book Your First Session

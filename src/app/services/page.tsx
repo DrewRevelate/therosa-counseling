@@ -431,9 +431,7 @@ export default function ServicesPage() {
           </p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center">
             <a
-              href="https://calendar.app.google/zRvQ4e6mVcHk9KYD6"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/schedule"
               className="inline-block rounded-lg bg-white px-11 py-5 text-lg font-semibold text-brand-purple shadow-lg transition-transform hover:-translate-y-0.5 hover:shadow-2xl"
             >
               Schedule a Consultation

@@ -69,14 +69,12 @@ export default function Header() {
               ))}
             </nav>
 
-            <a
-              href="https://calendar.app.google/zRvQ4e6mVcHk9KYD6"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/schedule"
               className="rounded-full bg-brand-purple px-6 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#8B3589]"
             >
               Schedule a Consultation
-            </a>
+            </Link>
           </div>
 
           <button
@@ -126,15 +124,13 @@ export default function Header() {
               {link.label}
             </Link>
           ))}
-          <a
-            href="https://calendar.app.google/zRvQ4e6mVcHk9KYD6"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/schedule"
             onClick={() => setIsMobileOpen(false)}
             className="mt-2 inline-flex w-full items-center justify-center rounded-full bg-brand-purple px-4 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#8B3589]"
           >
             Schedule a Consultation
-          </a>
+          </Link>
         </nav>
       </div>
     </header>
