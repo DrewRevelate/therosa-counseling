@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { MainLayout } from '@/components/layout';
-import { GoogleCalendarEmbed } from '@/components/scheduling/GoogleCalendarEmbed';
 
 export default function SchedulePage() {
   const [hasAttested, setHasAttested] = useState(false);
@@ -150,8 +149,33 @@ export default function SchedulePage() {
             </button>
           </div>
 
-          <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl border border-brand-purple/15 p-6 md:p-8 mb-10">
-            <GoogleCalendarEmbed />
+          <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl border border-brand-purple/15 p-10 md:p-12 mb-10 text-center">
+            <div className="max-w-2xl mx-auto">
+              <div className="mb-8">
+                <svg className="w-20 h-20 mx-auto text-brand-purple mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                <h2 className="text-2xl md:text-3xl font-serif font-bold text-gray-900 mb-4">
+                  Ready to schedule?
+                </h2>
+                <p className="text-lg text-gray-600 leading-relaxed mb-8">
+                  Click below to view available appointment times and book your consultation. You'll be taken to a secure Google Calendar booking page.
+                </p>
+              </div>
+
+              <a
+                href="https://calendar.app.google/zRvQ4e6mVcHk9KYD6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-brand-purple text-white px-12 py-5 rounded-xl hover:bg-[#8B3589] transition-all font-semibold text-lg shadow-xl hover:shadow-2xl hover:-translate-y-1"
+              >
+                View Available Times & Book
+              </a>
+
+              <p className="mt-6 text-sm text-gray-500">
+                Opens in a new window • Secure booking via Google Calendar
+              </p>
+            </div>
           </div>
 
           <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-lg border border-brand-purple/15 p-8 md:p-10">
