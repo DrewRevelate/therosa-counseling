@@ -1,134 +1,268 @@
-import { MainLayout } from '@/components/layout';
-import type { Metadata } from 'next';
+import { MainLayout } from "@/components/layout";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Services - Trauma & Addiction Therapy | Therosa Counseling',
-  description: 'Specialized therapy services including trauma counseling, addiction treatment, and individual therapy. Evidence-based online care for NH and MA residents.',
+  title: "Services - Trauma & Addiction Therapy | Therosa Counseling",
+  description:
+    "Specialized therapy services including trauma counseling, addiction treatment, and individual therapy. Evidence-based online care for NH and MA residents.",
 };
 
+function AccentDot({ tone }: { tone: "purple" | "pink" | "neutral" }) {
+  const palette = {
+    purple: "bg-brand-purple",
+    pink: "bg-brand-pink",
+    neutral: "bg-gray-400",
+  } as const;
+
+  return (
+    <span
+      className={`mt-2 inline-flex h-2.5 w-2.5 shrink-0 rounded-full ${palette[tone]}`}
+    />
+  );
+}
+
 export default function ServicesPage() {
+  const traumaModalities = [
+    {
+      title: "Cognitive Behavioral Therapy (CBT)",
+      description:
+        "Identifies and reshapes thought patterns connected to trauma so you can respond differently in the present.",
+    },
+    {
+      title: "Eye Movement Desensitization and Reprocessing (EMDR)",
+      description:
+        "Helps your brain process traumatic memories so their emotional charge no longer feels overwhelming.",
+    },
+    {
+      title: "Somatic techniques",
+      description:
+        "Reconnects mind and body through grounding, breath, and sensory awareness to release tension stored in the nervous system.",
+    },
+    {
+      title: "Parts-informed work",
+      description:
+        "Invites all parts of you—including the protective ones—into the conversation so healing sticks.",
+    },
+  ];
+
+  const traumaConcerns = [
+    "Post-traumatic stress (PTSD & C-PTSD)",
+    "Childhood and attachment trauma",
+    "Medical or caregiving trauma",
+    "Trauma connected to addiction and recovery",
+  ];
+
+  const addictionApproaches = [
+    {
+      title: "Motivational interviewing",
+      description:
+        "Builds readiness for change without judgment, meeting you exactly where you are.",
+    },
+    {
+      title: "CBT for substance use",
+      description:
+        "Uncovers the thoughts, emotions, and habits that keep the cycle going—and replaces them with practical tools.",
+    },
+    {
+      title: "Relapse prevention planning",
+      description:
+        "Creates a personalized roadmap for staying grounded when cravings or stress hit.",
+    },
+    {
+      title: "Dual-diagnosis support",
+      description:
+        "Addresses co-occurring mental health concerns so recovery isn’t happening in isolation.",
+    },
+  ];
+
+  const addictionSupports = [
+    "Alcohol, opioid, and stimulant use disorders",
+    "Prescription medication misuse",
+    "Early recovery stabilization",
+    "Relapse prevention and long-term maintenance",
+    "Family support and communication",
+  ];
+
+  const additionalServices = [
+    {
+      title: "Individual Therapy",
+      description:
+        "Weekly or bi-weekly sessions focused on anxiety, depression, life transitions, and relationship stressors.",
+    },
+    {
+      title: "Crisis Recovery Support",
+      description:
+        "Short-term, focused support after acute events to help re-establish safety and coping strategies.",
+    },
+    {
+      title: "Professional Consults",
+      description:
+        "Consultation for therapists, educators, and first responders navigating trauma and addiction dynamics.",
+    },
+  ];
+
+  const expectations = [
+    {
+      title: "Initial conversation",
+      description:
+        "We use the first meeting to get a clear picture of what’s happening, what you’ve tried, and how you’d like things to feel different.",
+      tone: "purple" as const,
+    },
+    {
+      title: "Collaborative plan",
+      description:
+        "Together we sketch a plan that aligns with your goals, pace, and capacity. It’s flexible by design—we adapt as you grow.",
+      tone: "pink" as const,
+    },
+    {
+      title: "Steady support",
+      description:
+        "Most clients meet weekly or bi-weekly. Sessions blend processing work, skill-building, and accountability to keep you moving.",
+      tone: "purple" as const,
+    },
+    {
+      title: "Secure telehealth",
+      description:
+        "Every appointment happens through a HIPAA-compliant telehealth platform, giving you reliable access from anywhere in NH or MA.",
+      tone: "pink" as const,
+    },
+  ];
+
   return (
     <MainLayout>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-b from-brand-purple/5 to-white py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6 text-center">
-            Our Services
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-[#F7F1EC] py-20">
+        <div
+          className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/3 bg-gradient-to-l from-brand-purple/10 to-transparent md:block"
+          aria-hidden="true"
+        />
+        <div className="relative mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+          <span className="inline-flex items-center gap-2 rounded-full border border-brand-purple/20 bg-white/70 px-5 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-brand-purple backdrop-blur">
+            Services
+          </span>
+          <h1 className="mt-6 text-4xl font-serif font-bold leading-tight text-gray-900 md:text-5xl">
+            Trauma &amp; addiction support that meets you where you are
           </h1>
-          <p className="text-xl text-gray-600 text-center max-w-3xl mx-auto">
-            Specialized, evidence-based therapy tailored to your unique needs
+          <p className="mt-6 text-lg leading-relaxed text-gray-700 md:text-xl">
+            Evidence-based therapy for when things feel heavy, complicated, or
+            stuck. Licensed in New Hampshire and Massachusetts, delivered
+            securely online.
           </p>
         </div>
       </section>
 
-      {/* Overview Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-4">
-              At Therosa Counseling, I provide compassionate, professional online therapy services specializing in trauma and addiction treatment—because these two issues are often deeply connected. With over 20 years of clinical experience, including work in emergency rooms, crisis intervention, and specialized trauma clinics, I understand the complexity of what you&apos;re dealing with.
-            </p>
-            <p className="text-base text-gray-500 max-w-2xl mx-auto">
-              All sessions are conducted via secure, HIPAA-compliant telehealth platforms and are available exclusively to residents of New Hampshire and Massachusetts.
-            </p>
+      {/* Overview */}
+      <section className="bg-white py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-12 md:grid-cols-[1.2fr_1fr] md:items-start">
+            <div className="space-y-6 text-lg leading-relaxed text-gray-700">
+              <p>
+                I’ve spent more than two decades sitting with people in crisis,
+                in recovery, and everywhere in between. That experience—spanning
+                emergency rooms, specialized trauma programs, and intensive
+                outpatient care—shaped a practice that’s grounded, direct, and
+                deeply human.
+              </p>
+              <p>
+                Sessions happen through a HIPAA-compliant telehealth platform so
+                you can connect from a space that feels safe. We work together
+                to understand what’s underneath the pain, build tools you can
+                rely on, and create lasting change on your terms.
+              </p>
+            </div>
+            <div className="rounded-3xl border border-[#E4DAD0] bg-[#FBF7F1] p-8 shadow-sm">
+              <h2 className="text-lg font-semibold uppercase tracking-[0.3em] text-brand-purple/70">
+                What informs the work
+              </h2>
+              <ul className="mt-5 space-y-3 text-sm text-gray-700">
+                <li className="flex items-start gap-3">
+                  <AccentDot tone="purple" />
+                  <span>Trauma-informed, attachment-aware care</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <AccentDot tone="purple" />
+                  <span>Integrated trauma and addiction treatment</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <AccentDot tone="purple" />
+                  <span>Evidence-based modalities tailored to you</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <AccentDot tone="purple" />
+                  <span>Licensed in NH &amp; MA; telehealth only</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Trauma Counseling Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="md:flex md:gap-12 items-start">
-            <div className="md:w-1/3 mb-8 md:mb-0">
-              <div className="bg-gradient-to-br from-brand-purple to-brand-purple/80 text-white p-8 rounded-lg shadow-lg">
-                <h2 className="text-3xl font-serif font-bold mb-4">
-                  Trauma Counseling
-                </h2>
-                <div className="h-1 w-20 bg-white/50 mb-4"></div>
-                <p className="text-white/90">
-                  Specialized support for healing from traumatic experiences
-                </p>
-              </div>
+      {/* Trauma counseling */}
+      <section className="bg-gradient-to-br from-white via-white to-brand-purple/10 py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-12 md:grid-cols-[0.9fr_1.1fr] md:items-start">
+            <div className="rounded-3xl border border-brand-purple/15 bg-white/90 p-8 shadow-xl backdrop-blur">
+              <h2 className="text-sm font-semibold uppercase tracking-[0.35em] text-brand-purple/70">
+                Trauma counseling
+              </h2>
+              <p className="mt-5 text-3xl font-serif font-semibold text-gray-900">
+                Rebuilding safety, one steady conversation at a time
+              </p>
+              <p className="mt-4 text-base leading-relaxed text-gray-700">
+                Trauma doesn’t respond to quick fixes. The work is careful,
+                paced, and collaborative—so your nervous system has space to
+                breathe again.
+              </p>
             </div>
 
-            <div className="md:w-2/3">
-              <div className="prose prose-lg max-w-none">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  Understanding Trauma-Informed Care
+            <div className="space-y-10">
+              <div>
+                <h3 className="text-xl font-serif font-semibold text-gray-900">
+                  How we work
                 </h3>
-                <p className="text-gray-600 mb-6">
-                  Trauma can profoundly impact your sense of safety, relationships, and overall wellbeing. Whether you've experienced a single traumatic event or ongoing traumatic stress, healing is possible with the right support.
+                <p className="mt-4 text-base leading-relaxed text-gray-700">
+                  We start by understanding how trauma shows up for you—and how
+                  it intersects with relationships, health, and daily rhythms.
+                  From there, we draw on modalities that help your body and mind
+                  process what happened without rushing or retraumatizing.
                 </p>
+              </div>
 
-                <h4 className="text-xl font-bold text-gray-900 mb-3">
-                  My Approach to Trauma Treatment
+              <div>
+                <h4 className="text-sm font-semibold uppercase tracking-[0.3em] text-brand-purple/70">
+                  Therapeutic tools
                 </h4>
-                <p className="text-gray-600 mb-4">
-                  With over 4 years as a dedicated trauma clinician and additional crisis intervention experience in hospital emergency rooms, I&apos;ve worked with people dealing with everything from acute crisis situations to long-standing trauma. I use evidence-based, trauma-informed approaches that recognize the profound impact trauma has on the mind, body, and spirit. Treatment is tailored to your unique needs and proceeds at a pace that feels safe and manageable for you.
-                </p>
-
-                <h4 className="text-xl font-bold text-gray-900 mb-3">
-                  Therapeutic Modalities Include:
-                </h4>
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-start">
-                    <span className="text-brand-purple mr-2 mt-1">•</span>
-                    <span className="text-gray-600"><strong>Cognitive Behavioral Therapy (CBT):</strong> Helps identify and change unhelpful thought patterns and behaviors related to trauma</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-brand-purple mr-2 mt-1">•</span>
-                    <span className="text-gray-600"><strong>Eye Movement Desensitization and Reprocessing (EMDR):</strong> Processes traumatic memories to reduce their emotional intensity</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-brand-purple mr-2 mt-1">•</span>
-                    <span className="text-gray-600"><strong>Somatic Experiencing:</strong> Addresses trauma stored in the body through mindfulness and body awareness</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-brand-purple mr-2 mt-1">•</span>
-                    <span className="text-gray-600"><strong>Narrative Therapy:</strong> Helps you reframe your trauma story in empowering ways</span>
-                  </li>
+                <ul className="mt-4 space-y-4">
+                  {traumaModalities.map((item) => (
+                    <li key={item.title} className="flex items-start gap-3">
+                      <AccentDot tone="purple" />
+                      <div>
+                        <p className="font-semibold text-gray-900">
+                          {item.title}
+                        </p>
+                        <p className="mt-1 text-sm leading-relaxed text-gray-700">
+                          {item.description}
+                        </p>
+                      </div>
+                    </li>
+                  ))}
                 </ul>
+              </div>
 
-                <h4 className="text-xl font-bold text-gray-900 mb-3">
-                  Trauma Therapy Can Help With:
+              <div>
+                <h4 className="text-sm font-semibold uppercase tracking-[0.3em] text-brand-purple/70">
+                  Common focus areas
                 </h4>
-                <div className="grid md:grid-cols-2 gap-3 mb-6">
-                  <ul className="space-y-2">
-                    <li className="flex items-start text-gray-600">
-                      <span className="text-brand-purple mr-2">✓</span>
-                      PTSD and Complex PTSD
-                    </li>
-                    <li className="flex items-start text-gray-600">
-                      <span className="text-brand-purple mr-2">✓</span>
-                      Childhood trauma
-                    </li>
-                    <li className="flex items-start text-gray-600">
-                      <span className="text-brand-purple mr-2">✓</span>
-                      Sexual assault/abuse
-                    </li>
-                    <li className="flex items-start text-gray-600">
-                      <span className="text-brand-purple mr-2">✓</span>
-                      Domestic violence
-                    </li>
-                  </ul>
-                  <ul className="space-y-2">
-                    <li className="flex items-start text-gray-600">
-                      <span className="text-brand-purple mr-2">✓</span>
-                      Grief and loss
-                    </li>
-                    <li className="flex items-start text-gray-600">
-                      <span className="text-brand-purple mr-2">✓</span>
-                      Accident or injury trauma
-                    </li>
-                    <li className="flex items-start text-gray-600">
-                      <span className="text-brand-purple mr-2">✓</span>
-                      Vicarious trauma
-                    </li>
-                    <li className="flex items-start text-gray-600">
-                      <span className="text-brand-purple mr-2">✓</span>
-                      Medical trauma
-                    </li>
-                  </ul>
+                <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                  {traumaConcerns.map((concern) => (
+                    <div
+                      key={concern}
+                      className="flex items-center gap-3 rounded-2xl bg-white px-4 py-3 text-sm text-gray-700 shadow-sm"
+                    >
+                      <AccentDot tone="purple" />
+                      {concern}
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -136,209 +270,179 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Addiction Treatment Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="md:flex md:gap-12 items-start md:flex-row-reverse">
-            <div className="md:w-1/3 mb-8 md:mb-0">
-              <div className="bg-gradient-to-br from-brand-pink to-brand-pink/80 text-white p-8 rounded-lg shadow-lg">
-                <h2 className="text-3xl font-serif font-bold mb-4">
-                  Addiction Treatment
+      {/* Addiction treatment */}
+      <section className="bg-white py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-12 md:grid-cols-[1.1fr_0.9fr] md:items-start">
+            <div className="space-y-10">
+              <div>
+                <h2 className="text-sm font-semibold uppercase tracking-[0.35em] text-brand-pink/70">
+                  Addiction treatment
                 </h2>
-                <div className="h-1 w-20 bg-white/50 mb-4"></div>
-                <p className="text-white/90">
-                  Compassionate support for substance use and recovery
+                <p className="mt-5 text-3xl font-serif font-semibold text-gray-900">
+                  Recovery that honors the story underneath the substance
+                </p>
+                <p className="mt-4 text-base leading-relaxed text-gray-700">
+                  Addiction rarely exists on its own. We look at trauma, habits,
+                  relationships, and nervous system regulation so you’re not
+                  fighting the same battles without new support.
                 </p>
               </div>
-            </div>
 
-            <div className="md:w-2/3">
-              <div className="prose prose-lg max-w-none">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  A Non-Judgmental Approach to Recovery
+              <div>
+                <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-brand-pink/70">
+                  Treatment approaches
                 </h3>
-                <p className="text-gray-600 mb-6">
-                  Addiction is a complex condition that affects individuals physically, emotionally, and socially. Recovery is not just about stopping substance use—it's about understanding the underlying causes, developing healthier coping strategies, and building a life worth living in recovery.
-                </p>
-
-                <h4 className="text-xl font-bold text-gray-900 mb-3">
-                  My Approach to Addiction Treatment
-                </h4>
-                <p className="text-gray-600 mb-4">
-                  I went back to school specifically to earn a master&apos;s degree in Substance Abuse/Addiction Counseling because I kept seeing how deeply trauma and addiction are connected. I&apos;ve also worked in intensive outpatient programs (IOP) with adolescents and adults in recovery. I provide evidence-based, compassionate care that treats addiction as a health condition, not a moral failing. We work collaboratively to understand your relationship with substances, identify triggers, and develop sustainable strategies for recovery.
-                </p>
-
-                <h4 className="text-xl font-bold text-gray-900 mb-3">
-                  Treatment Approaches Include:
-                </h4>
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-start">
-                    <span className="text-brand-pink mr-2 mt-1">•</span>
-                    <span className="text-gray-600"><strong>Motivational Interviewing:</strong> Explores ambivalence about change and strengthens motivation for recovery</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-brand-pink mr-2 mt-1">•</span>
-                    <span className="text-gray-600"><strong>Cognitive Behavioral Therapy for Addiction:</strong> Identifies and changes thought patterns that contribute to substance use</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-brand-pink mr-2 mt-1">•</span>
-                    <span className="text-gray-600"><strong>Relapse Prevention Planning:</strong> Develops personalized strategies to maintain recovery</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-brand-pink mr-2 mt-1">•</span>
-                    <span className="text-gray-600"><strong>Dual Diagnosis Treatment:</strong> Addresses co-occurring mental health conditions alongside addiction</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-brand-pink mr-2 mt-1">•</span>
-                    <span className="text-gray-600"><strong>Mindfulness-Based Relapse Prevention:</strong> Uses mindfulness practices to manage cravings and triggers</span>
-                  </li>
+                <ul className="mt-4 space-y-4">
+                  {addictionApproaches.map((item) => (
+                    <li key={item.title} className="flex items-start gap-3">
+                      <AccentDot tone="pink" />
+                      <div>
+                        <p className="font-semibold text-gray-900">
+                          {item.title}
+                        </p>
+                        <p className="mt-1 text-sm leading-relaxed text-gray-700">
+                          {item.description}
+                        </p>
+                      </div>
+                    </li>
+                  ))}
                 </ul>
+              </div>
 
-                <h4 className="text-xl font-bold text-gray-900 mb-3">
-                  We Can Help With:
-                </h4>
-                <div className="grid md:grid-cols-2 gap-3 mb-6">
-                  <ul className="space-y-2">
-                    <li className="flex items-start text-gray-600">
-                      <span className="text-brand-pink mr-2">✓</span>
-                      Alcohol use disorder
+              <div>
+                <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-brand-pink/70">
+                  Support often includes
+                </h3>
+                <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+                  {addictionSupports.map((support) => (
+                    <li
+                      key={support}
+                      className="flex items-center gap-3 rounded-2xl border border-brand-pink/20 bg-white px-4 py-3 text-sm text-gray-700 shadow-sm"
+                    >
+                      <AccentDot tone="pink" />
+                      {support}
                     </li>
-                    <li className="flex items-start text-gray-600">
-                      <span className="text-brand-pink mr-2">✓</span>
-                      Drug addiction
-                    </li>
-                    <li className="flex items-start text-gray-600">
-                      <span className="text-brand-pink mr-2">✓</span>
-                      Prescription medication misuse
-                    </li>
-                  </ul>
-                  <ul className="space-y-2">
-                    <li className="flex items-start text-gray-600">
-                      <span className="text-brand-pink mr-2">✓</span>
-                      Early recovery support
-                    </li>
-                    <li className="flex items-start text-gray-600">
-                      <span className="text-brand-pink mr-2">✓</span>
-                      Relapse prevention
-                    </li>
-                    <li className="flex items-start text-gray-600">
-                      <span className="text-brand-pink mr-2">✓</span>
-                      Family support for addiction
-                    </li>
-                  </ul>
-                </div>
+                  ))}
+                </ul>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Other Services Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-serif font-bold text-gray-900 mb-8 text-center">
-            Additional Services
-          </h2>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="text-xl font-bold text-brand-purple mb-3">
-                Individual Therapy
+            <div className="rounded-3xl border border-brand-pink/15 bg-[#FCEFF6] p-8 shadow-xl backdrop-blur">
+              <h3 className="text-base font-semibold uppercase tracking-[0.3em] text-brand-pink/80">
+                Lived experience in addiction work
               </h3>
-              <p className="text-gray-600">
-                One-on-one sessions addressing a range of mental health concerns including anxiety, depression, stress management, and life transitions.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="text-xl font-bold text-brand-purple mb-3">
-                Anxiety & Depression
-              </h3>
-              <p className="text-gray-600">
-                Evidence-based treatment for anxiety disorders and depression, helping you develop coping skills and improve your quality of life.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="text-xl font-bold text-brand-purple mb-3">
-                Stress Management
-              </h3>
-              <p className="text-gray-600">
-                Learn practical techniques for managing stress, improving work-life balance, and building resilience in challenging times.
+              <p className="mt-5 text-sm leading-relaxed text-gray-700">
+                I earned a master’s degree in addiction counseling after seeing
+                firsthand how trauma and substance use intersect. My background
+                includes facilitating IOP groups, providing family support, and
+                helping adolescents and adults navigate the messy middle of
+                recovery. Expect accountability, compassion, and practical tools
+                in every session.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* What to Expect Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-serif font-bold text-gray-900 mb-8 text-center">
-            What to Expect
+      {/* Additional services */}
+      <section className="bg-[#F7F1EC] py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-center text-3xl font-serif font-semibold text-gray-900 md:text-4xl">
+            Additional ways we can work together
           </h2>
-
-          <div className="space-y-6">
-            <div className="bg-brand-purple/5 p-6 rounded-lg">
-              <h3 className="text-xl font-bold text-brand-purple mb-2">
-                Initial Consultation
-              </h3>
-              <p className="text-gray-600">
-                Your first session is an opportunity to share your story, discuss your goals, and determine if we're a good fit. We'll explore your concerns, history, and what you hope to achieve through therapy.
-              </p>
-            </div>
-
-            <div className="bg-brand-pink/5 p-6 rounded-lg">
-              <h3 className="text-xl font-bold text-brand-pink mb-2">
-                Personalized Treatment Plan
-              </h3>
-              <p className="text-gray-600">
-                Together, we'll develop a treatment plan tailored to your unique needs, goals, and preferences. This plan will guide our work while remaining flexible as your needs evolve.
-              </p>
-            </div>
-
-            <div className="bg-brand-purple/5 p-6 rounded-lg">
-              <h3 className="text-xl font-bold text-brand-purple mb-2">
-                Ongoing Sessions
-              </h3>
-              <p className="text-gray-600">
-                Regular therapy sessions provide consistent support as you work toward your goals. Session frequency is determined collaboratively based on your needs, typically ranging from weekly to bi-weekly.
-              </p>
-            </div>
-
-            <div className="bg-brand-pink/5 p-6 rounded-lg">
-              <h3 className="text-xl font-bold text-brand-pink mb-2">
-                Secure Online Platform
-              </h3>
-              <p className="text-gray-600">
-                All sessions are conducted via HIPAA-compliant telehealth platforms, ensuring your privacy and confidentiality while providing convenient access to care from your home.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="bg-gradient-to-r from-brand-purple to-brand-pink py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-serif font-bold text-white mb-4">
-            Take the First Step Toward Healing
-          </h2>
-          <p className="text-xl text-white/90 mb-8">
-            Schedule your consultation today to discuss which services are right for you.
+          <p className="mx-auto mt-4 max-w-3xl text-center text-base leading-relaxed text-gray-700">
+            The work is personalized. These offerings often weave into trauma
+            and addiction treatment or serve as standalone support depending on
+            what you need.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+          <div className="mt-12 grid gap-8 md:grid-cols-3">
+            {additionalServices.map((service) => (
+              <div
+                key={service.title}
+                className="flex h-full flex-col rounded-3xl border border-[#E4DAD0] bg-white/90 p-6 shadow-sm backdrop-blur"
+              >
+                <h3 className="text-xl font-serif font-semibold text-gray-900">
+                  {service.title}
+                </h3>
+                <p className="mt-4 text-sm leading-relaxed text-gray-700">
+                  {service.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* What to expect */}
+      <section className="bg-white py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-center text-3xl font-serif font-semibold text-gray-900 md:text-4xl">
+            What working together looks like
+          </h2>
+          <p className="mx-auto mt-4 max-w-3xl text-center text-base leading-relaxed text-gray-700">
+            Therapy isn’t linear. We build a structure that supports you and
+            leaves room for the unexpected.
+          </p>
+
+          <div className="mt-12 grid gap-8 md:grid-cols-2">
+            {expectations.map((item) => (
+              <div
+                key={item.title}
+                className="rounded-3xl border border-brand-purple/10 bg-[#FBF7F1] p-6 shadow-sm"
+              >
+                <div className="flex items-center gap-3">
+                  <AccentDot tone={item.tone} />
+                  <h3 className="text-lg font-serif font-semibold text-gray-900">
+                    {item.title}
+                  </h3>
+                </div>
+                <p className="mt-4 text-sm leading-relaxed text-gray-700">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section
+        className="relative overflow-hidden py-20"
+        style={{
+          background: "linear-gradient(135deg, #A040A0 0%, #E673B3 100%)",
+        }}
+      >
+        <div
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'><path d='M0 60 Q30 30 60 60 T120 60' stroke='rgba(255,255,255,0.2)' stroke-width='4' fill='none'/></svg>")`,
+          }}
+          aria-hidden="true"
+        />
+        <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-serif font-semibold leading-snug text-white md:text-4xl">
+            Let’s figure out what support looks like for you
+          </h2>
+          <p className="mt-6 text-lg leading-relaxed text-white/90 md:text-xl">
+            Book a consultation to talk through what’s going on, what you’ve
+            tried, and how therapy can help.
+          </p>
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center">
             <a
-              href="/schedule"
-              className="inline-block bg-white text-brand-purple px-10 py-4 rounded-lg hover:bg-gray-100 transition-colors font-medium text-lg shadow-xl"
+              href="https://calendar.app.google/zRvQ4e6mVcHk9KYD6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block rounded-lg bg-white px-11 py-5 text-lg font-semibold text-brand-purple shadow-lg transition-transform hover:-translate-y-0.5 hover:shadow-2xl"
             >
-              Book Your Consultation
+              Schedule a Consultation
             </a>
             <a
               href="/contact"
-              className="inline-block bg-transparent text-white border-2 border-white px-10 py-4 rounded-lg hover:bg-white/10 transition-colors font-medium text-lg"
+              className="inline-block rounded-lg border border-white/70 px-11 py-5 text-lg font-semibold text-white transition-colors hover:bg-white/10"
             >
-              Contact Us
+              Ask a Question
             </a>
           </div>
         </div>
@@ -346,3 +450,4 @@ export default function ServicesPage() {
     </MainLayout>
   );
 }
+

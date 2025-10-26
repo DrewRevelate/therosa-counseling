@@ -1,340 +1,328 @@
-import { MainLayout } from '@/components/layout';
-import type { Metadata } from 'next';
+import { MainLayout } from "@/components/layout";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'FAQ - Common Questions About Therapy | Therosa Counseling',
-  description: 'Answers to frequently asked questions about fees, insurance, online therapy sessions, and the counseling process at Therosa Counseling.',
+  title: "FAQ - Common Questions About Therapy | Therosa Counseling",
+  description:
+    "Answers to frequently asked questions about fees, insurance, online therapy sessions, and the counseling process at Therosa Counseling.",
 };
 
+type FAQItem = {
+  question: string;
+  answer: string;
+  details?: string[];
+  tone?: "purple" | "pink";
+};
+
+function FAQCard({
+  item,
+  tone = "purple",
+}: {
+  item: FAQItem;
+  tone?: "purple" | "pink";
+}) {
+  const palette =
+    tone === "purple"
+      ? {
+          border: "border-brand-purple/15",
+          heading: "text-brand-purple",
+          chip: "bg-brand-purple/10 text-brand-purple",
+        }
+      : {
+          border: "border-brand-pink/15",
+          heading: "text-brand-pink",
+          chip: "bg-brand-pink/10 text-brand-pink",
+        };
+
+  return (
+    <div
+      className={`flex h-full flex-col gap-4 rounded-3xl border ${palette.border} bg-white/95 p-6 shadow-sm backdrop-blur`}
+    >
+      <div className="flex items-center gap-3">
+        <span
+          className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.25em] ${palette.chip}`}
+        >
+          FAQ
+        </span>
+        <h3 className="text-lg font-serif font-semibold text-gray-900">
+          {item.question}
+        </h3>
+      </div>
+      <p className="text-sm leading-relaxed text-gray-700">{item.answer}</p>
+      {item.details ? (
+        <ul className="mt-2 space-y-2 text-sm text-gray-700">
+          {item.details.map((detail) => (
+            <li key={detail} className="flex items-start gap-3">
+              <span
+                className={`mt-1 inline-flex h-2.5 w-2.5 shrink-0 rounded-full ${
+                  tone === "purple" ? "bg-brand-purple" : "bg-brand-pink"
+                }`}
+              />
+              <span>{detail}</span>
+            </li>
+          ))}
+        </ul>
+      ) : null}
+    </div>
+  );
+}
+
 export default function FAQPage() {
+  const gettingStarted: FAQItem[] = [
+    {
+      question: "How do I schedule my first appointment?",
+      answer:
+        "Book a consultation through the online scheduler or reach out via phone/email. We’ll find a time that works and use that first call to make sure it feels like the right fit.",
+    },
+    {
+      question: "What happens in the first session?",
+      answer:
+        "It’s a conversation—no pressure. We’ll talk through what brought you here, what you want to change, and what’s worked (or hasn’t) before. I’ll map out how therapy typically works, and you can decide how you’d like to move forward.",
+    },
+    {
+      question: "Is therapy only available online?",
+      answer:
+        "Yes. Sessions happen via a secure, HIPAA-compliant telehealth platform so you can access therapy from a space that feels safe and private to you.",
+    },
+    {
+      question: "Who do you work with?",
+      answer:
+        "I’m licensed in New Hampshire and Massachusetts and currently work with adults (18+) navigating trauma, addiction, and related mental health concerns.",
+    },
+  ];
+
+  const feesInsurance: FAQItem[] = [
+    {
+      question: "How much do sessions cost?",
+      answer:
+        "We talk candidly about fees during the consultation. Payments are made at the time of service, and we can explore flexible options if cost is a barrier.",
+      tone: "pink",
+    },
+    {
+      question: "Do you accept insurance?",
+      answer:
+        "Coverage differs by plan. I’m happy to provide a superbill you can submit for potential reimbursement if out-of-network benefits apply.",
+      tone: "pink",
+    },
+    {
+      question: "Can I use HSA or FSA funds?",
+      answer:
+        "Yes. Most Health Savings Accounts (HSA) and Flexible Spending Accounts (FSA) cover therapy. Check with your provider and keep your session receipts.",
+      tone: "pink",
+    },
+  ];
+
+  const telehealthQuestions: FAQItem[] = [
+    {
+      question: "Is online therapy as effective as in-person therapy?",
+      answer:
+        "Research shows telehealth can be just as effective as in-person sessions for most concerns, including trauma and addiction. The added benefit: you’re in your own environment.",
+    },
+    {
+      question: "What technology do I need?",
+      answer:
+        "You’ll need a device with video/audio (computer, tablet, or phone), a reliable internet connection, and a private space. A secure session link is sent before each appointment.",
+      details: [
+        "Device with camera + microphone",
+        "Stable internet connection",
+        "Private, quiet space",
+        "Access to the secure telehealth link",
+      ],
+    },
+    {
+      question: "Is it confidential?",
+      answer:
+        "Yes. The telehealth platform is encrypted and HIPAA-compliant. Your information is protected with the same standards as in-person care.",
+    },
+    {
+      question: "What if we get disconnected?",
+      answer:
+        "If technology glitches, I’ll call you at the number on file. We can troubleshoot or switch to phone/reschedule as needed.",
+    },
+    {
+      question: "How long are sessions?",
+      answer:
+        "Standard sessions run 50–60 minutes. The initial consult may run slightly longer so we have space to cover your history and questions.",
+    },
+  ];
+
+  const processQuestions: FAQItem[] = [
+    {
+      question: "How long will I need therapy?",
+      answer:
+        "It depends on your goals and what you’re working through. Some people feel significant shifts within a few months; others stay longer-term. We check in regularly and adjust together.",
+      tone: "pink",
+    },
+    {
+      question: "How often should I come?",
+      answer:
+        "Weekly is most common at the start. As things stabilize, we may move to bi-weekly or monthly—whatever keeps momentum without overwhelming you.",
+      tone: "pink",
+    },
+    {
+      question: "What if I’m in crisis?",
+      answer:
+        "If you’re in immediate danger, call 911 or go to the nearest ER. For urgent support, use 988 (Suicide & Crisis Lifeline), text HOME to 741741, or call SAMHSA’s helpline at 1-800-662-4357.",
+      tone: "pink",
+    },
+    {
+      question: "Do you prescribe medication?",
+      answer:
+        "I don’t prescribe, but I collaborate with prescribers. If you need a referral to psychiatry, we’ll talk through options.",
+      tone: "pink",
+    },
+    {
+      question: "Can someone join my session?",
+      answer:
+        "Therapy is primarily one-on-one, but when it’s therapeutically helpful and you’re comfortable, we can invite a partner or family member into a session.",
+      tone: "pink",
+    },
+  ];
+
+  const privacyQuestions: FAQItem[] = [
+    {
+      question: "Is everything confidential?",
+      answer:
+        "Yes—with a few legal exceptions like imminent risk of harm, suspected abuse, or court orders. If we ever need to navigate those, I’ll discuss it with you whenever possible.",
+      details: [
+        "Risk of harm to self or others",
+        "Suspected abuse or neglect of a vulnerable person",
+        "Court orders requiring disclosure",
+      ],
+    },
+    {
+      question: "How is my information stored?",
+      answer:
+        "All records live in an encrypted, HIPAA-compliant system. Telehealth sessions and messaging happen through secure, privacy-first platforms.",
+    },
+  ];
+
   return (
     <MainLayout>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-b from-brand-purple/5 to-white py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6 text-center">
-            Frequently Asked Questions
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-[#F7F1EC] py-20">
+        <div
+          className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/3 bg-gradient-to-l from-brand-purple/10 to-transparent md:block"
+          aria-hidden="true"
+        />
+        <div className="relative mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+          <span className="inline-flex items-center gap-2 rounded-full border border-brand-purple/20 bg-white/70 px-5 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-brand-purple backdrop-blur">
+            FAQ
+          </span>
+          <h1 className="mt-6 text-4xl font-serif font-bold leading-tight text-gray-900 md:text-5xl">
+            Questions people often ask before we start
           </h1>
-          <p className="text-xl text-gray-600 text-center max-w-3xl mx-auto">
-            Find answers to common questions about therapy, fees, insurance, and our online counseling process
+          <p className="mt-6 text-lg leading-relaxed text-gray-700 md:text-xl">
+            If you’re unsure about fees, logistics, or whether online therapy
+            can actually help—you’re not alone. Start here.
           </p>
         </div>
       </section>
 
-      {/* FAQ Sections */}
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-
-          {/* Getting Started */}
-          <div className="mb-12">
-            <h2 className="text-3xl font-serif font-bold text-brand-purple mb-8">
-              Getting Started
+      {/* FAQ sections */}
+      <section className="bg-white py-20">
+        <div className="mx-auto flex max-w-5xl flex-col gap-16 px-4 sm:px-6 lg:px-8">
+          <div>
+            <h2 className="text-2xl font-serif font-semibold text-brand-purple md:text-3xl">
+              Getting started
             </h2>
-
-            <div className="space-y-6">
-              <div className="bg-brand-purple/5 p-6 rounded-lg">
-                <h3 className="text-xl font-bold text-brand-purple mb-3">
-                  How do I schedule my first appointment?
-                </h3>
-                <p className="text-gray-600">
-                  You can schedule your initial consultation through our online booking system or by contacting us directly via phone or email. We'll work with you to find a time that fits your schedule. Initial consultations typically last 50-60 minutes.
-                </p>
-              </div>
-
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  What should I expect in my first session?
-                </h3>
-                <p className="text-gray-600">
-                  Your first session is an opportunity for us to get to know each other. We'll discuss what brought you to therapy, your goals, and your background. I'll also explain how therapy works, answer any questions you have, and together we'll determine if we're a good fit. There's no pressure—this is a collaborative process.
-                </p>
-              </div>
-
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  Do you see clients in person or only online?
-                </h3>
-                <p className="text-gray-600">
-                  Therosa Counseling operates as an online-only practice. All sessions are conducted via secure, HIPAA-compliant telehealth platforms. This allows for convenient, accessible care from the comfort and privacy of your own space.
-                </p>
-              </div>
-
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  Who can receive services from Therosa Counseling?
-                </h3>
-                <p className="text-gray-600">
-                  Services are available exclusively to residents of New Hampshire and Massachusetts, as I am licensed to practice in these states. At this time, I work with adults (18+) seeking support for trauma, addiction, and related mental health concerns.
-                </p>
-              </div>
+            <div className="mt-8 grid gap-6 md:grid-cols-2">
+              {gettingStarted.map((item) => (
+                <FAQCard key={item.question} item={item} />
+              ))}
             </div>
           </div>
 
-          {/* Fees & Insurance */}
-          <div className="mb-12">
-            <h2 className="text-3xl font-serif font-bold text-brand-pink mb-8">
-              Fees & Insurance
+          <div>
+            <h2 className="text-2xl font-serif font-semibold text-brand-pink md:text-3xl">
+              Fees &amp; insurance
             </h2>
-
-            <div className="space-y-6">
-              <div className="bg-brand-pink/5 p-6 rounded-lg">
-                <h3 className="text-xl font-bold text-brand-pink mb-3">
-                  How much do sessions cost?
-                </h3>
-                <p className="text-gray-600 mb-3">
-                  Session fees are determined on an individual basis and discussed during your initial consultation. Payment is due at the time of service.
-                </p>
-                <p className="text-gray-600">
-                  We believe quality mental health care should be accessible, and we're happy to discuss flexible payment options if cost is a concern.
-                </p>
-              </div>
-
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  Do you accept insurance?
-                </h3>
-                <p className="text-gray-600 mb-3">
-                  Insurance acceptance varies. Please contact us directly to discuss your specific insurance plan and coverage options. We can provide you with a superbill (detailed receipt) that you may be able to submit to your insurance company for potential out-of-network reimbursement.
-                </p>
-                <p className="text-gray-600">
-                  Many insurance plans offer out-of-network benefits that can help offset the cost of therapy. We're happy to help you understand your benefits.
-                </p>
-              </div>
-
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  What forms of payment do you accept?
-                </h3>
-                <p className="text-gray-600">
-                  We accept major credit cards, debit cards, and HSA/FSA cards. Payment is processed securely through our HIPAA-compliant payment system.
-                </p>
-              </div>
-
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  What is your cancellation policy?
-                </h3>
-                <p className="text-gray-600">
-                  We require 24 hours notice for cancellations or rescheduling. Late cancellations or no-shows may be subject to a fee. We understand that emergencies happen, and we'll work with you on a case-by-case basis.
-                </p>
-              </div>
+            <div className="mt-8 grid gap-6 md:grid-cols-2">
+              {feesInsurance.map((item) => (
+                <FAQCard
+                  key={item.question}
+                  item={item}
+                  tone={item.tone ?? "pink"}
+                />
+              ))}
             </div>
           </div>
 
-          {/* Online Therapy Process */}
-          <div className="mb-12">
-            <h2 className="text-3xl font-serif font-bold text-brand-purple mb-8">
-              Online Therapy Process
+          <div>
+            <h2 className="text-2xl font-serif font-semibold text-brand-purple md:text-3xl">
+              Telehealth &amp; logistics
             </h2>
-
-            <div className="space-y-6">
-              <div className="bg-brand-purple/5 p-6 rounded-lg">
-                <h3 className="text-xl font-bold text-brand-purple mb-3">
-                  Is online therapy as effective as in-person therapy?
-                </h3>
-                <p className="text-gray-600">
-                  Yes! Research consistently shows that online therapy (also called telehealth or teletherapy) is just as effective as in-person therapy for most concerns, including trauma and addiction. Online therapy offers the added benefits of convenience, accessibility, and the comfort of receiving care in your own environment.
-                </p>
-              </div>
-
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  What technology do I need for online sessions?
-                </h3>
-                <p className="text-gray-600 mb-3">
-                  You'll need:
-                </p>
-                <ul className="space-y-2 text-gray-600 ml-4">
-                  <li className="flex items-start">
-                    <span className="text-brand-purple mr-2">•</span>
-                    A device with a camera and microphone (computer, tablet, or smartphone)
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-brand-purple mr-2">•</span>
-                    A reliable internet connection
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-brand-purple mr-2">•</span>
-                    A private, quiet space where you can speak freely
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-brand-purple mr-2">•</span>
-                    Access to our secure telehealth platform (link provided upon booking)
-                  </li>
-                </ul>
-              </div>
-
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  Is online therapy confidential and secure?
-                </h3>
-                <p className="text-gray-600">
-                  Absolutely. We use HIPAA-compliant telehealth platforms that encrypt all communications to protect your privacy. Your information is kept strictly confidential according to ethical and legal standards, with only limited exceptions (such as risk of harm to self or others).
-                </p>
-              </div>
-
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  What if I have technical difficulties during a session?
-                </h3>
-                <p className="text-gray-600">
-                  Technical issues can occasionally happen. If we lose connection during a session, I'll call you at the phone number you provided. We'll troubleshoot together, and if needed, we can continue the session by phone or reschedule for a time that works for both of us.
-                </p>
-              </div>
-
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  How long are therapy sessions?
-                </h3>
-                <p className="text-gray-600">
-                  Standard sessions are 50-60 minutes. The initial consultation may run slightly longer to allow adequate time for assessment and questions. Session length and frequency are discussed collaboratively based on your needs and goals.
-                </p>
-              </div>
+            <div className="mt-8 grid gap-6 md:grid-cols-2">
+              {telehealthQuestions.map((item) => (
+                <FAQCard key={item.question} item={item} />
+              ))}
             </div>
           </div>
 
-          {/* Treatment & Process */}
-          <div className="mb-12">
-            <h2 className="text-3xl font-serif font-bold text-brand-pink mb-8">
-              Treatment & Process
+          <div>
+            <h2 className="text-2xl font-serif font-semibold text-brand-pink md:text-3xl">
+              Treatment &amp; process
             </h2>
-
-            <div className="space-y-6">
-              <div className="bg-brand-pink/5 p-6 rounded-lg">
-                <h3 className="text-xl font-bold text-brand-pink mb-3">
-                  How long will I need to be in therapy?
-                </h3>
-                <p className="text-gray-600">
-                  The length of therapy varies greatly depending on your individual needs, goals, and circumstances. Some people find significant relief in a few months, while others benefit from longer-term support. We'll regularly check in about your progress and adjust the treatment plan as needed. You're always in control of when you feel ready to conclude therapy.
-                </p>
-              </div>
-
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  How often should I attend sessions?
-                </h3>
-                <p className="text-gray-600">
-                  Most clients benefit from weekly sessions, especially at the beginning of treatment. As progress is made, some clients transition to bi-weekly or monthly sessions. We'll work together to determine the frequency that best supports your goals and fits your schedule.
-                </p>
-              </div>
-
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  What if I'm in crisis or have an emergency?
-                </h3>
-                <p className="text-gray-600 mb-3">
-                  If you're experiencing a mental health emergency, please call 911 or go to your nearest emergency room immediately.
-                </p>
-                <p className="text-gray-600 mb-3">
-                  For crisis support, you can also contact:
-                </p>
-                <ul className="space-y-2 text-gray-600 ml-4">
-                  <li className="flex items-start">
-                    <span className="text-brand-pink mr-2">•</span>
-                    <span><strong>988 Suicide & Crisis Lifeline:</strong> Call or text 988</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-brand-pink mr-2">•</span>
-                    <span><strong>Crisis Text Line:</strong> Text HOME to 741741</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-brand-pink mr-2">•</span>
-                    <span><strong>SAMHSA National Helpline:</strong> 1-800-662-4357 (substance use support)</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  Do you prescribe medication?
-                </h3>
-                <p className="text-gray-600">
-                  As a licensed mental health counselor, I do not prescribe medication. However, I can work collaboratively with your psychiatrist or primary care physician if medication is part of your treatment plan. I can also provide referrals to psychiatric services if needed.
-                </p>
-              </div>
-
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  Can family members or partners join sessions?
-                </h3>
-                <p className="text-gray-600">
-                  While my primary focus is individual therapy, there may be times when it's beneficial to include a partner or family member in a session (with your consent). We can discuss this option if it aligns with your treatment goals.
-                </p>
-              </div>
+            <div className="mt-8 grid gap-6 md:grid-cols-2">
+              {processQuestions.map((item) => (
+                <FAQCard
+                  key={item.question}
+                  item={item}
+                  tone={item.tone ?? "pink"}
+                />
+              ))}
             </div>
           </div>
 
-          {/* Privacy & Confidentiality */}
-          <div className="mb-12">
-            <h2 className="text-3xl font-serif font-bold text-brand-purple mb-8">
-              Privacy & Confidentiality
+          <div>
+            <h2 className="text-2xl font-serif font-semibold text-brand-purple md:text-3xl">
+              Privacy &amp; confidentiality
             </h2>
-
-            <div className="space-y-6">
-              <div className="bg-brand-purple/5 p-6 rounded-lg">
-                <h3 className="text-xl font-bold text-brand-purple mb-3">
-                  Is everything I say in therapy confidential?
-                </h3>
-                <p className="text-gray-600 mb-3">
-                  Yes, with limited exceptions required by law. What you share in therapy is protected by confidentiality and HIPAA privacy regulations. I will not share information about you without your written consent.
-                </p>
-                <p className="text-gray-600 mb-3">
-                  Legal exceptions to confidentiality include:
-                </p>
-                <ul className="space-y-2 text-gray-600 ml-4">
-                  <li className="flex items-start">
-                    <span className="text-brand-purple mr-2">•</span>
-                    Risk of harm to yourself or others
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-brand-purple mr-2">•</span>
-                    Suspected abuse or neglect of a child, elderly person, or disabled person
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-brand-purple mr-2">•</span>
-                    Court orders requiring disclosure
-                  </li>
-                </ul>
-                <p className="text-gray-600 mt-3">
-                  If any of these situations arise, I will discuss it with you whenever possible before taking action.
-                </p>
-              </div>
-
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  How is my information stored and protected?
-                </h3>
-                <p className="text-gray-600">
-                  All client records are stored electronically in a HIPAA-compliant, encrypted system. We use secure communication platforms for all telehealth sessions. Your information is protected with the highest level of security and privacy standards.
-                </p>
-              </div>
+            <div className="mt-8 grid gap-6 md:grid-cols-2">
+              {privacyQuestions.map((item) => (
+                <FAQCard key={item.question} item={item} />
+              ))}
             </div>
           </div>
-
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-gradient-to-r from-brand-purple to-brand-pink py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-serif font-bold text-white mb-4">
-            Still Have Questions?
+      {/* CTA */}
+      <section
+        className="relative overflow-hidden py-20"
+        style={{
+          background: "linear-gradient(135deg, #A040A0 0%, #E673B3 100%)",
+        }}
+      >
+        <div
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'><path d='M0 60 Q30 30 60 60 T120 60' stroke='rgba(255,255,255,0.2)' stroke-width='4' fill='none'/></svg>")`,
+          }}
+          aria-hidden="true"
+        />
+        <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-serif font-semibold leading-snug text-white md:text-4xl">
+            Still unsure about something?
           </h2>
-          <p className="text-xl text-white/90 mb-8">
-            We're here to help. Contact us or schedule a consultation to discuss your specific needs.
+          <p className="mt-6 text-lg leading-relaxed text-white/90 md:text-xl">
+            Reach out with a question or book a consultation. We’ll walk through
+            what working together could look like.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center">
             <a
               href="/contact"
-              className="inline-block bg-white text-brand-purple px-10 py-4 rounded-lg hover:bg-gray-100 transition-colors font-medium text-lg shadow-xl"
+              className="inline-block rounded-lg bg-white px-11 py-5 text-lg font-semibold text-brand-purple shadow-lg transition-transform hover:-translate-y-0.5 hover:shadow-2xl"
             >
-              Contact Us
+              Contact Me
             </a>
             <a
-              href="/schedule"
-              className="inline-block bg-transparent text-white border-2 border-white px-10 py-4 rounded-lg hover:bg-white/10 transition-colors font-medium text-lg"
+              href="https://calendar.app.google/zRvQ4e6mVcHk9KYD6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block rounded-lg border border-white/70 px-11 py-5 text-lg font-semibold text-white transition-colors hover:bg-white/10"
             >
-              Book a Consultation
+              Schedule a Consultation
             </a>
           </div>
         </div>
@@ -342,3 +330,4 @@ export default function FAQPage() {
     </MainLayout>
   );
 }
+

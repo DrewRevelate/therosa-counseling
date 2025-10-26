@@ -34,9 +34,9 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/schedule" className="text-gray-600 hover:text-brand-purple transition-colors">
+                <a href="https://calendar.app.google/zRvQ4e6mVcHk9KYD6" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-brand-purple transition-colors">
                   Schedule
-                </Link>
+                </a>
               </li>
               <li>
                 <Link href="/contact" className="text-gray-600 hover:text-brand-purple transition-colors">

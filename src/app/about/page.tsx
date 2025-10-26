@@ -543,7 +543,9 @@ export default function AboutPage() {
             your healing.
           </p>
           <a
-            href="/schedule"
+            href="https://calendar.app.google/zRvQ4e6mVcHk9KYD6"
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-8 inline-block rounded-lg bg-white px-10 py-4 text-lg font-medium text-brand-purple shadow-xl transition-all hover:bg-gray-100 hover:shadow-2xl"
           >
             Book your consultation
