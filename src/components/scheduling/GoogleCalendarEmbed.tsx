@@ -74,14 +74,8 @@ export function GoogleCalendarEmbed({
             <div className="space-y-1">
               <p>
                 <strong>Email:</strong>{' '}
-                <a href="mailto:contact@therosa-counseling.com" className="text-brand-purple hover:text-brand-pink font-medium">
-                  contact@therosa-counseling.com
-                </a>
-              </p>
-              <p>
-                <strong>Phone:</strong>{' '}
-                <a href="tel:+1234567890" className="text-brand-purple hover:text-brand-pink font-medium">
-                  (123) 456-7890
+                <a href="mailto:contact@therosacounseling.com" className="text-brand-purple hover:text-brand-pink font-medium">
+                  contact@therosacounseling.com
                 </a>
               </p>
               <p>
