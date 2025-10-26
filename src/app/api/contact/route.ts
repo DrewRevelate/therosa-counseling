@@ -6,7 +6,6 @@ import { z } from 'zod';
 const contactFormSchema = z.object({
   name: z.string().min(2).max(100),
   email: z.string().email(),
-  phone: z.string().min(10).max(20),
   message: z.string().min(10).max(2000),
   consent: z.boolean().refine((val) => val === true),
 });
@@ -102,7 +101,6 @@ async function sendEmailViaGmail(formData: z.infer<typeof contactFormSchema>) {
     '',
     `Name: ${formData.name}`,
     `Email: ${formData.email}`,
-    `Phone: ${formData.phone}`,
     '',
     `Message:`,
     formData.message,

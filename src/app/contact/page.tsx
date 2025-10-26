@@ -56,21 +56,9 @@ function ContactIcon({ variant }: { variant: "phone" | "email" }) {
 export default function ContactPage() {
   const contactMethods: ContactMethod[] = [
     {
-      title: "Call Catherine",
+      title: "Email Catherine",
       description:
-        "If you prefer talking things through, call to ask questions or book your first session. I return messages within one business day.",
-      actionLabel: "(123) 456-7890",
-      href: "tel:+1234567890",
-      variant: "phone",
-      footnote: [
-        "Mon – Fri: 9:00 AM – 6:00 PM ET",
-        "Saturday: By appointment",
-      ],
-    },
-    {
-      title: "Email the practice",
-      description:
-        "Send a note with a few details about what you’re looking for. Replies typically arrive within 1–2 business days.",
+        "Send a message with a few details about what you're looking for. Replies typically arrive within 1–2 business days.",
       actionLabel: "contact@therosacounseling.com",
       href: "mailto:contact@therosacounseling.com",
       variant: "email",

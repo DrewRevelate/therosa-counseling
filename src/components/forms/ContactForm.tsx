@@ -4,14 +4,11 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
+import Link from 'next/link';
 
 const contactFormSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters').max(100, 'Name is too long'),
   email: z.string().email('Please enter a valid email address'),
-  phone: z.string()
-    .min(10, 'Please enter a valid phone number')
-    .max(20, 'Phone number is too long')
-    .regex(/^[\d\s\-\(\)\+]+$/, 'Please enter a valid phone number'),
   message: z.string()
     .min(10, 'Message must be at least 10 characters')
     .max(2000, 'Message is too long'),
@@ -160,25 +157,6 @@ export default function ContactForm() {
           )}
         </div>
 
-        {/* Phone Field */}
-        <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-            Phone Number <span className="text-red-500">*</span>
-          </label>
-          <input
-            id="phone"
-            type="tel"
-            {...register('phone')}
-            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-brand-purple focus:border-transparent transition-colors ${
-              errors.phone ? 'border-red-500' : 'border-gray-300'
-            }`}
-            placeholder="(123) 456-7890"
-          />
-          {errors.phone && (
-            <p className="mt-1 text-sm text-red-600">{errors.phone.message}</p>
-          )}
-        </div>
-
         {/* Message Field */}
         <div>
           <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
@@ -212,9 +190,9 @@ export default function ContactForm() {
             />
             <label htmlFor="consent" className="ml-3 text-sm text-gray-600">
               I have read and agree to the{' '}
-              <a href="/privacy" className="text-brand-purple hover:text-brand-pink font-medium">
+              <Link href="/privacy" target="_blank" rel="noopener noreferrer" className="text-brand-purple hover:text-brand-pink font-medium underline">
                 Privacy Policy
-              </a>
+              </Link>
               . I understand that this form is for general inquiries only and should not be used for emergencies or to share sensitive health information. <span className="text-red-500">*</span>
             </label>
           </div>
